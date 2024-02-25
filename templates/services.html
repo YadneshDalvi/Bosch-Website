@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-4">
+    <img src="static/1.jpg" class="container-fluid px-0" alt="Image">
+    </div>
+    <div class="container-fluid mb-3 px-3">
+    <h3 class="text-center">Please Enter Your Details</h3>
+    <form method="post" action="/services">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name:</label>
+          <input type="text" class="form-control"  placeholder="Surname   Name   Father's Name" name='name'>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Phone Number:</label>
+            <input type="text" class="form-control"  placeholder="Phone Number" name='phone'>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Enter Your Email address:</label>
+            <input type="email" class="form-control" placeholder="name@example.com"
+            name='email'>
+          </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Select Your Branch:</label>
+          <select class="form-control" name='branch'>
+            <option>Computer Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Why do you want to apply for internship at Bosch?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='reason'></textarea>
+        </div>
+
+        {% comment %} <div class="form-group">
+            <label for="exampleFormControlFile1">Upload Your Resume:</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name='resume'>
+          </div> {% endcomment %}
+
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+      </form>
+    </div>
+{% endblock body %}
+
